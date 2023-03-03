@@ -1,1 +1,92 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: black;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
 
+h1 {
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: rgb(115, 255, 0) 1px 0px 20px;
+    color: yellow;
+    margin-bottom: 0;
+}
+
+.choose-container {
+    color: yellow;
+    display: flex;
+    justify-content: space-around;
+}
+
+.play-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+}
+
+.box {
+    border: 1px solid white;
+    width: 120px;
+    height: 120px;
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+    color: white;
+
+}
+
+.parent-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+button {
+    color: black;
+    border-radius: 15px;
+    width: 110px;
+    height: 40px;
+    font-weight: bold;
+}
+
+.box1, .box4, .box7 {
+    border-left: none;
+}
+
+.box3, .box6, .box9 {
+    border-right: none;
+}
+
+.box1, .box2, .box3 {
+    border-top: none;
+}
+
+.box7, .box8, .box9 {
+    border-bottom: none;
+}
+
+.indicator-container {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.player-1, .player-2 {
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 15px;
+    transition: 0.3s ease-in;
+}
+
+.reset-container {
+    display: flex;
+    justify-content: center;
+}
