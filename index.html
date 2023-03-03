@@ -9,16 +9,22 @@
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
-   <div class="parent-container">
-    <h1>Tic Tac Toe</h1>
-    <div class="choose-container">
-        <button class="vs-player choose">
-            VS Player
-        </button>
-        <button class="vs-computer choose">
-            VS Computer
+    <div class="intro">
+        <div class="intro-msg">
+            welcome to Tic-Tac-Toe!
+        </div>
+        <button class="enter-button">
+            Enter
         </button>
     </div>
+   <div class="parent-container">
+    <h1>Tic Tac Toe</h1>
+    <div class="start-container">
+        <button class="start-game">
+            START
+        </button>
+    </div>
+    <div class="winner-spot"></div>
     <div class="play-container">
         <div class="box1 box"></div>
         <div class="box2 box"></div>
@@ -43,6 +49,10 @@
             Player 2 turn
         </div>
     </div>
+    <audio src="/sounds/game-music.mp3" class="game-music"></audio>
+    <audio src="/sounds/button-sound.mp3" class="button-sound"></audio>
+    <audio src="/sounds/gameplay-sound.mp3" class="gameplay-sound"></audio>
+    <audio src="/sounds/yay.mp3" class="yay"></audio>
    </div> 
 </body>
 </html>
