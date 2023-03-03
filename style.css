@@ -1,3 +1,8 @@
+@font-face {
+    font-family: IntroFont;
+    src: url(debrosee-font/Debrosee-ALPnL.ttf);
+}
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: black;
@@ -17,10 +22,10 @@ h1 {
     margin-bottom: 0;
 }
 
-.choose-container {
+.start-container {
     color: yellow;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .play-container {
@@ -32,8 +37,8 @@ h1 {
 
 .box {
     border: 1px solid white;
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     display: grid;
     place-items: center;
     font-size: 3rem;
@@ -89,4 +94,44 @@ button {
 .reset-container {
     display: flex;
     justify-content: center;
+}
+
+.winner-spot {
+    display: flex;
+    justify-content: center;
+    color: yellowgreen;
+    font-size: 2rem;
+    font-weight: Italic;
+    padding: 8px;
+}
+
+.intro {
+    display: flex;
+    color: whitesmoke;
+    font-size: 2rem;
+    flex-direction: column;
+    width: 350px;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid salmon;
+    font-weight: bold;
+    gap: 30px;
+    border-radius: 100px;
+    margin: 200px;
+    position: absolute;
+    transition: 3s ease-in;
+    opacity: 0;
+    z-index: 10;
+    padding: 10px;
+    font-family: introFont;
+}
+
+.parent-container {
+    opacity: 0;
+}
+
+.enter {
+    opacity: 1;
+    transition: 3s ease-in;
 }
