@@ -14,7 +14,7 @@ const box8 = document.querySelector('.box8');
 const box9 = document.querySelector('.box9');
 let count = 0;
 
-function gameLogic() {
+function gameLogic(e) {
   playerOneTurn.style.color = 'black';
   playerOneTurn.style.backgroundColor = 'white';
   for (let i = 0; i < playBoxes.length; i++) {
@@ -23,24 +23,36 @@ function gameLogic() {
       if (playBoxes[i].innerText.includes('X') || playBoxes[i].innerText.includes('O')) {
         return 'oza';
       }
-      else {
-        count += 1;
-        if (count % 2 !== 0) {
-          playBoxes[i].innerText = 'X';
-          playerTwoTurn.style.color = 'black';
-          playerTwoTurn.style.backgroundColor = 'white';
-          playerOneTurn.style.color = 'white';
-          playerOneTurn.style.backgroundColor = 'black';
-        } else if (count % 2 === 0) {
-          playBoxes[i].innerText = 'O';
-          playerOneTurn.style.color = 'black';
-          playerOneTurn.style.backgroundColor = 'white';
-          playerTwoTurn.style.color = 'white';
-          playerTwoTurn.style.backgroundColor = 'black';
-        }
+
+      count += 1;
+      if (count % 2 !== 0) {
+        playBoxes[i].innerText = 'X';
+        playerTwoTurn.style.color = 'black';
+        playerTwoTurn.style.backgroundColor = 'white';
+        playerOneTurn.style.color = 'white';
+        playerOneTurn.style.backgroundColor = 'black';
+      } else if (count % 2 === 0) {
+        playBoxes[i].innerText = 'O';
+        playerOneTurn.style.color = 'black';
+        playerOneTurn.style.backgroundColor = 'white';
+        playerTwoTurn.style.color = 'white';
+        playerTwoTurn.style.backgroundColor = 'black';
       }
     });
   }
 }
 
+function resetGameLogic(e) {
+  count = 0;
+  for (let i = 0; i < playBoxes.length; i++) {
+    playBoxes[i].innerText = '';
+  }
+  playerOneTurn.style.color = 'white';
+  playerOneTurn.style.backgroundColor = 'black';
+  playerTwoTurn.style.color = 'white';
+  playerTwoTurn.style.backgroundColor = 'black';
+  e.stopPropagation();
+}
+
+resetButton.addEventListener('click', resetGameLogic);
 vsPlayerOption.addEventListener('click', gameLogic);
