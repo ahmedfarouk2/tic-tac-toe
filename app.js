@@ -82,18 +82,17 @@ function playerWinAnnounce() {
   }
 }
 
-function resetGameLogic(e) {
+function resetGameLogic() {
   standard = false;
   winnerSpot.innerText = '';
   count = 0;
   for (let i = 0; i < playBoxes.length; i++) {
     playBoxes[i].innerText = '';
   }
-  playerOneTurn.style.color = 'white';
-  playerOneTurn.style.backgroundColor = 'black';
+  playerOneTurn.style.color = 'black';
+  playerOneTurn.style.backgroundColor = 'white';
   playerTwoTurn.style.color = 'white';
   playerTwoTurn.style.backgroundColor = 'black';
-  e.stopPropagation();
 }
 
 window.addEventListener('load', loadGame);
