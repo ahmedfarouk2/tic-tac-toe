@@ -108,7 +108,7 @@ button {
 .intro {
     display: flex;
     color: whitesmoke;
-    font-size: 2rem;
+    font-size: 1.5rem;
     flex-direction: column;
     width: 350px;
     height: 350px;
@@ -120,7 +120,7 @@ button {
     border-radius: 100px;
     margin: 200px;
     position: absolute;
-    transition: 2s ease-in;
+    transition: 1s ease-in;
     opacity: 0;
     z-index: 10;
     padding: 10px;
@@ -133,5 +133,5 @@ button {
 
 .enter {
     opacity: 1;
-    transition: 2s ease-in;
+    transition: 0.7s ease-in;
 }
