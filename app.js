@@ -26,11 +26,11 @@ function loadGame() {
 function enterMenu() {
   introMessage.style.opacity = '0';
   parentContainer.classList.add('enter');
-  setTimeout(() => introMessage.style.display = 'none', 1000);
+  setTimeout(() => (introMessage.style.display = 'none'), 1000);
 }
 
 function gameLogic(e) {
-  startButton.style.display = 'none'
+  startButton.style.display = 'none';
   playerOneTurn.style.color = 'black';
   playerOneTurn.style.backgroundColor = 'white';
   playerTwoTurn.style.color = 'white';
@@ -38,7 +38,10 @@ function gameLogic(e) {
   for (let i = 0; i < playBoxes.length; i++) {
     // eslint-disable-next-line no-loop-func
     playBoxes[i].addEventListener('click', () => {
-      if (playBoxes[i].innerText.includes('X') || playBoxes[i].innerText.includes('O')) {
+      if (
+        playBoxes[i].innerText.includes('X')
+        || playBoxes[i].innerText.includes('O')
+      ) {
         return '';
       }
 
@@ -62,24 +65,81 @@ function gameLogic(e) {
 }
 
 function playerWinAnnounce(e) {
-  if ((box1.innerText === 'X' && box2.innerText === 'X' && box3.innerText === 'X') || (box1.innerText === 'X' && box4.innerText === 'X' && box7.innerText === 'X') || (box3.innerText === 'X' && box6.innerText === 'X' && box9.innerText === 'X') || (box7.innerText === 'X' && box8.innerText === 'X' && box9.innerText === 'X') || (box3.innerText === 'X' && box5.innerText === 'X' && box7.innerText === 'X') || (box2.innerText === 'X' && box5.innerText === 'X' && box8.innerText === 'X') || (box4.innerText === 'X' && box5.innerText === 'X' && box6.innerText === 'X') || (box1.innerText === 'X' && box5.innerText === 'X' && box9.innerText === 'X')) {
+  if (
+    (box1.innerText === 'X'
+      && box2.innerText === 'X'
+      && box3.innerText === 'X')
+    || (box1.innerText === 'X'
+      && box4.innerText === 'X'
+      && box7.innerText === 'X')
+    || (box3.innerText === 'X'
+      && box6.innerText === 'X'
+      && box9.innerText === 'X')
+    || (box7.innerText === 'X'
+      && box8.innerText === 'X'
+      && box9.innerText === 'X')
+    || (box3.innerText === 'X'
+      && box5.innerText === 'X'
+      && box7.innerText === 'X')
+    || (box2.innerText === 'X'
+      && box5.innerText === 'X'
+      && box8.innerText === 'X')
+    || (box4.innerText === 'X'
+      && box5.innerText === 'X'
+      && box6.innerText === 'X')
+    || (box1.innerText === 'X' && box5.innerText === 'X' && box9.innerText === 'X')
+  ) {
     winnerSpot.innerText = 'Player 1 wins!';
     setTimeout(() => {
       winnerSpot.innerText = '';
     }, 2000);
     resetGameLogic();
     standard = true;
-  } else if ((box1.innerText === 'O' && box2.innerText === 'O' && box3.innerText === 'O') || (box1.innerText === 'O' && box4.innerText === 'O' && box7.innerText === 'O') || (box3.innerText === 'O' && box6.innerText === 'O' && box9.innerText === 'O') || (box7.innerText === 'O' && box8.innerText === 'O' && box9.innerText === 'O') || (box3.innerText === 'O' && box5.innerText === 'O' && box7.innerText === 'O') || (box2.innerText === 'O' && box5.innerText === 'O' && box8.innerText === 'O') || (box4.innerText === 'O' && box5.innerText === 'O' && box6.innerText === 'O') || (box1.innerText === 'O' && box5.innerText === 'O' && box9.innerText === 'O')) {
+  } else if (
+    (box1.innerText === 'O'
+      && box2.innerText === 'O'
+      && box3.innerText === 'O')
+    || (box1.innerText === 'O'
+      && box4.innerText === 'O'
+      && box7.innerText === 'O')
+    || (box3.innerText === 'O'
+      && box6.innerText === 'O'
+      && box9.innerText === 'O')
+    || (box7.innerText === 'O'
+      && box8.innerText === 'O'
+      && box9.innerText === 'O')
+    || (box3.innerText === 'O'
+      && box5.innerText === 'O'
+      && box7.innerText === 'O')
+    || (box2.innerText === 'O'
+      && box5.innerText === 'O'
+      && box8.innerText === 'O')
+    || (box4.innerText === 'O'
+      && box5.innerText === 'O'
+      && box6.innerText === 'O')
+    || (box1.innerText === 'O' && box5.innerText === 'O' && box9.innerText === 'O')
+  ) {
     winnerSpot.innerText = 'Player 2 wins!';
     setTimeout(() => {
-      winnerSpot.innerText = ''
+      winnerSpot.innerText = '';
     }, 2000);
     resetGameLogic();
     standard = true;
   }
   for (let i = 0; i < playBoxes.length; i++) {
-    if (box1.innerText !== '' && box2.innerText !== '' && box3.innerText !== '' && box4.innerText !== '' && box5.innerText !== '' && box6.innerText !== '' && box7.innerText !== '' && box8.innerText !== '' && box9.innerText !== '' && standard === false) {
-      winnerSpot.innerText = 'It\'s a draw!';
+    if (
+      box1.innerText !== ''
+      && box2.innerText !== ''
+      && box3.innerText !== ''
+      && box4.innerText !== ''
+      && box5.innerText !== ''
+      && box6.innerText !== ''
+      && box7.innerText !== ''
+      && box8.innerText !== ''
+      && box9.innerText !== ''
+      && standard === false
+    ) {
+      winnerSpot.innerText = "It's a draw!";
     }
   }
 }
@@ -99,4 +159,4 @@ function resetGameLogic(e) {
 window.addEventListener('load', loadGame);
 enterButton.addEventListener('click', enterMenu);
 resetButton.addEventListener('click', resetGameLogic);
-startButton.addEventListener('click', gameLogic, {once:true});
+startButton.addEventListener('click', gameLogic, { once: true });
