@@ -140,6 +140,9 @@ function playerWinAnnounce(e) {
       && standard === false
     ) {
       winnerSpot.innerText = "It's a draw!";
+      setTimeout(() => {
+        winnerSpot.innerText = '';
+      }, 2000);
     }
   }
 }
