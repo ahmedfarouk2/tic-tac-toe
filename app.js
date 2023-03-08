@@ -61,18 +61,20 @@ function gameLogic(e) {
   }
 }
 
-function playerWinAnnounce() {
+function playerWinAnnounce(e) {
   if ((box1.innerText === 'X' && box2.innerText === 'X' && box3.innerText === 'X') || (box1.innerText === 'X' && box4.innerText === 'X' && box7.innerText === 'X') || (box3.innerText === 'X' && box6.innerText === 'X' && box9.innerText === 'X') || (box7.innerText === 'X' && box8.innerText === 'X' && box9.innerText === 'X') || (box3.innerText === 'X' && box5.innerText === 'X' && box7.innerText === 'X') || (box2.innerText === 'X' && box5.innerText === 'X' && box8.innerText === 'X') || (box4.innerText === 'X' && box5.innerText === 'X' && box6.innerText === 'X') || (box1.innerText === 'X' && box5.innerText === 'X' && box9.innerText === 'X')) {
     winnerSpot.innerText = 'Player 1 wins!';
     setTimeout(() => {
-      resetGameLogic();
-    }, 3000);
+      winnerSpot.innerText = '';
+    }, 2000);
+    resetGameLogic();
     standard = true;
   } else if ((box1.innerText === 'O' && box2.innerText === 'O' && box3.innerText === 'O') || (box1.innerText === 'O' && box4.innerText === 'O' && box7.innerText === 'O') || (box3.innerText === 'O' && box6.innerText === 'O' && box9.innerText === 'O') || (box7.innerText === 'O' && box8.innerText === 'O' && box9.innerText === 'O') || (box3.innerText === 'O' && box5.innerText === 'O' && box7.innerText === 'O') || (box2.innerText === 'O' && box5.innerText === 'O' && box8.innerText === 'O') || (box4.innerText === 'O' && box5.innerText === 'O' && box6.innerText === 'O') || (box1.innerText === 'O' && box5.innerText === 'O' && box9.innerText === 'O')) {
     winnerSpot.innerText = 'Player 2 wins!';
     setTimeout(() => {
-      resetGameLogic();
-    }, 3000);
+      winnerSpot.innerText = ''
+    }, 2000);
+    resetGameLogic();
     standard = true;
   }
   for (let i = 0; i < playBoxes.length; i++) {
@@ -82,9 +84,8 @@ function playerWinAnnounce() {
   }
 }
 
-function resetGameLogic() {
+function resetGameLogic(e) {
   standard = false;
-  winnerSpot.innerText = '';
   count = 0;
   for (let i = 0; i < playBoxes.length; i++) {
     playBoxes[i].innerText = '';
